@@ -1,0 +1,32 @@
+<header class="header mb-5">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid ps-3 pe-3 pt-1 pb-1">
+      <a class="navbar-brand pt-1 pb-1" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Переключатель навигации">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active pt-1 pb-1" aria-current="page" [routerLink]="''">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pt-1 pb-1" [routerLink]="'/products'">Каталог</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search" [formGroup]="searchForm">
+          <input class="form-control me-2 pe-1 ps-1"
+                 type="text"
+                 placeholder="Поиск чая"
+                 aria-label="Поиск"
+                 formControlName="search"
+          >
+          <button class="btn btn-outline-primary pe-4 ps-4" type="button" (click)="searchProduct(keyword)">Найти</button>
+          <button class="btn btn-outline-primary pe-4 ps-4 me-2 ms-2 btn-reset" type="button" [class.active]="active" (click)="resetSearch()">Сбросить</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>

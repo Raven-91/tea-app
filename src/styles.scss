@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+.product {
+
+  &__image {
+    flex: 1 0 50%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    flex: 1 0 50%;
+  }
+
+  &__description {
+    text-align: justify;
+  }
+
+  &__action {
+
+    .btn {
+      height: 40px !important;
+    }
+
+    .btn-buy {
+      width: 120px !important;
+    }
+  }
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.invalid-feedback {
+  display: block !important;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

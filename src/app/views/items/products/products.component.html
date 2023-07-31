@@ -1,0 +1,19 @@
+<section class="products pb-4 pb-md-5 mb-lg-4 wow animate__zoomIn">
+  <div class="container-lg pe-lg-0 ps-lg-0">
+    <h2 class="title text-center fs-2 fw-bold lh-1 mb-3 mb-sm-4 mb-md-5 pb-1">{{title}}</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2">
+
+      <ng-container *ngIf="products.length; else notFound">
+        <product-card *ngFor="let product of products; let i = index;" [product]="product"
+                      [index]="i"></product-card>
+      </ng-container>
+      <ng-template #notFound>
+        <div class="p-3 m-3 border border-2 border-light rounded-4 fw-bold fs-4 w-100 text-center">
+          По вашему запросу ничего не найдено
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
+  <loader *ngIf="loading"></loader>
+</section>

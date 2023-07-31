@@ -1,0 +1,21 @@
+<div class="product">
+  <div class="container-lg pe-lg-0 ps-lg-0">
+    <div class="d-flex flex-row align-items-center justify-content-between">
+      <div class="product__image">
+        <img src="{{product.image}}" alt="Product" class="img-fluid">
+      </div>
+      <div class="product__info">
+        <h2 class="product__title mb-4 fs-1 fw-bold">{{product.title}}</h2>
+        <div class="product__description mb-3">{{product.description}}</div>
+        <div class="product__price mb-3">
+          <span class="fw-bold fs-4">Цена: {{product.price}} рублей</span>
+        </div>
+        <div class="product__action d-flex flex-row align-items-center">
+          <button type="button" class="btn btn-primary me-3 btn-buy" [routerLink]="'/order'" [queryParams]="{product: product.title}">Купить</button>
+          <button type="button" class="btn btn-primary btn-return" [routerLink]="'/products'">Вернуться к каталогу</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <loader *ngIf="loading"></loader>
+</div>

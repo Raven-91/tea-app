@@ -1,0 +1,149 @@
+<section class="order-form pb-4 pb-md-5 wow animate__backInUp">
+  <div class="container-lg pe-lg-0 ps-lg-0">
+    <h2 class="title text-center fs-2 fw-bold lh-1 mb-3 mb-sm-4 mb-md-5 pb-1" id="order-title">Сделать заказ</h2>
+    <div class="form-container">
+      <form class="row gx-4 gy-3 needs-validation" id="form" [formGroup]="orderForm">
+
+        <div class="col-12">
+          <label for="product" class="form-label">Товар</label>
+          <input type="text"
+                 class="form-control"
+                 name="product"
+                 id="product"
+                 formControlName="product"
+                 readonly>
+        </div>
+
+        <div class="input-block col-lg-6 col-xl-4">
+          <label for="name" class="form-label lh-sm">Имя</label>
+          <input type="text"
+                 class="form-control"
+                 name="name"
+                 id="name"
+                 formControlName="name">
+          <div
+            *ngIf="orderForm.get('name')?.invalid && (orderForm.get('name')?.dirty || orderForm.get('name')?.touched)">
+            <div class="invalid-feedback" *ngIf="orderForm.get('name')?.errors?.['required']">
+              Необходимо ввести ваше имя (пример, Иван)
+            </div>
+            <div class="invalid-feedback" *ngIf="orderForm.get('name')?.errors?.['pattern']">
+              Необходимо вводить имя русскими буквами c прописной вначале
+            </div>
+          </div>
+        </div>
+
+        <div class="input-block col-lg-6 col-xl-4" style="min-width: 196px">
+          <label for="lastName" class="form-label lh-sm">Фамилия</label>
+          <input type="text"
+                 class="form-control"
+                 name="lastName"
+                 id="lastName"
+                 formControlName="lastName">
+          <div
+            *ngIf="orderForm.get('lastName')?.invalid && (orderForm.get('lastName')?.dirty || orderForm.get('lastName')?.touched)">
+            <div class="invalid-feedback" *ngIf="orderForm.get('lastName')?.errors?.['required']">
+              Необходимо ввести вашу фамилию (пример, Иванов)
+            </div>
+            <div class="invalid-feedback" *ngIf="orderForm.get('lastName')?.errors?.['pattern']">
+              Необходимо вводить фамилию русскими буквами c прописной вначале
+            </div>
+          </div>
+        </div>
+
+
+        <div class="input-block col-lg-6 col-xl-4" style="min-width: 196px">
+          <label for="phone" class="form-label lh-sm">Телефон</label>
+          <input type="text"
+                 class="form-control"
+                 name="phone"
+                 id="phone"
+                 formControlName="phone">
+          <div
+            *ngIf="orderForm.get('phone')?.invalid && (orderForm.get('phone')?.dirty || orderForm.get('phone')?.touched)">
+            <div class="invalid-feedback" *ngIf="orderForm.get('phone')?.errors?.['required']">
+              Необходимо ввести ваш номер телефона
+            </div>
+            <div class="invalid-feedback" *ngIf="orderForm.get('phone')?.errors?.['pattern']">
+              Номер должен состоять из 11 цифр (пример, 99890123456 или +99890123456)
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <label for="country" class="form-label">Страна</label>
+          <input type="text"
+                 class="form-control"
+                 name="country"
+                 id="country"
+                 formControlName="country">
+          <div
+            *ngIf="orderForm.get('country')?.invalid && (orderForm.get('country')?.dirty || orderForm.get('country')?.touched)">
+            <div class="invalid-feedback" *ngIf="orderForm.get('country')?.errors?.['required']">
+              Необходимо ввести страну проживания
+            </div>
+            <div class="invalid-feedback" *ngIf="orderForm.get('country')?.errors?.['pattern']">
+              Необходимо вводить страну проживания русскими буквами c прописной вначале
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <label for="zip" class="form-label">Индекс</label>
+          <input type="text"
+                 class="form-control"
+                 name="zip"
+                 id="zip"
+                 formControlName="zip">
+          <div
+            *ngIf="orderForm.get('zip')?.invalid && (orderForm.get('zip')?.dirty || orderForm.get('zip')?.touched)">
+            <div class="invalid-feedback" *ngIf="orderForm.get('zip')?.errors?.['required']">
+              Необходимо почтовый индекс
+            </div>
+            <div class="invalid-feedback" *ngIf="orderForm.get('zip')?.errors?.['pattern']">
+              Необходимо вводить индекс только цифрами
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="address" class="form-label">Адрес</label>
+          <input type="text"
+                 class="form-control"
+                 name="address"
+                 id="address"
+                 formControlName="address">
+          <div class="invalid-feedback"
+               *ngIf="orderForm.get('address')?.invalid
+                   && (orderForm.get('address')?.dirty
+                   || orderForm.get('address')?.touched)
+                   && orderForm.get('address')?.errors?.['required']">
+            Необходимо ввести адрес
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="comment" class="form-label">Комментарий к заказу</label>
+          <input type="text"
+                 class="form-control"
+                 name="comment"
+                 id="comment"
+                 formControlName="comment">
+        </div>
+
+        <div class="col-12 mt-4 d-flex align-items-center justify-content-between">
+          <button class="btn btn-primary ps-4 pe-4 hvr-grow-shadow" type="button" id="button" (click)="createOrder()">
+            Отправить
+          </button>
+          <div class="error-message text-danger fw-bold d-none" id="error-message">
+            Произошла ошибка. Попробуйте ещё раз.
+          </div>
+        </div>
+      </form>
+      <div class="alert alert-success mb-0 d-none" role="alert" id="successMessage">
+        <h4 class="text-center fw-bold">Спасибо за заказ!</h4>
+        <p class="text-center fs-4 fw-bold mb-0">Мы свяжемся с вами в ближайшее время!</p>
+      </div>
+    </div>
+  </div>
+  <loader *ngIf="loading"></loader>
+</section>

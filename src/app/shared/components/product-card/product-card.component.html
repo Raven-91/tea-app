@@ -1,0 +1,14 @@
+<div class="col product-card">
+  <div class="card h-100 d-flex flex-column align-items-center">
+    <a href="#" class="product-card-image">
+      <img src="{{product.image}}" alt="Product {{index + 1}}}}" class="card-img-top mb-1">
+    </a>
+    <div class="card-body ps-3 pe-3 ps-md-3 pe-md-3 pb-0 product-card-info">
+      <h5 class="card-title fw-bold text-center">{{product.title}}</h5>
+      <p class="card-text pt-1 pb-3 lh-sm product-card-description">{{product.description | shortenText}}</p>
+    </div>
+    <div class="card-footer bg-transparent border-0 pt-0 pe-4 ps-4 pb-3 mb-1">
+      <a href="#" class="btn btn-primary hvr-grow" style="--bs-btn-padding-x: 2.65em;" [routerLink]="'/product'" [queryParams]="{id: product.id}">Подробнее</a>
+    </div>
+  </div>
+</div>

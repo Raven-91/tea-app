@@ -1,0 +1,102 @@
+<main class="main pt-4 pb-4 pb-md-5 pt-md-5 mt-lg-4 mb-lg-4 wow animate__rollIn">
+  <div class="container-lg pe-lg-0 ps-lg-0">
+    <div>
+      <img src="../../../assets/images/img1.png" alt="Image" class="img-fluid">
+    </div>
+  </div>
+</main>
+<section class="faq-section pb-4 pb-md-5 mb-lg-4">
+  <div class="container-lg pe-lg-0 ps-lg-0">
+    <h2 class="title text-center fs-2 fw-bold lh-1 mb-3 mb-sm-4 mb-md-5 pb-1 wow animate__slideInUp">Ответы на часто
+      задаваемые вопросы</h2>
+    <div class="accordion-container">
+      <div id="accordion">
+        <h3 class="accordion__title wow animate__fadeInLeft">Собираете ли вы подарочные боксы?</h3>
+        <div class="accordion__text wow animate__fadeInLeft">
+          <p>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </p>
+        </div>
+        <h3 class="accordion__title wow animate__fadeInRight">Сколько у вас разновидностей чая?</h3>
+        <div class="accordion__text ">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque debitis deserunt
+            dignissimos dolorem dolorum ea expedita ipsam ipsum laudantium, minima nesciunt nihil non
+            possimus
+            quaerat quisquam rerum, similique tempore!Dolorum harum illo labore minus officia placeat
+            ratione
+            vel velit! Dolorum illo ipsa non quasi qui quod sint tempora, vel. Deserunt et facilis nostrum
+            optio
+            porro repellat unde vitae voluptas.
+          </p>
+        </div>
+        <h3 class="accordion__title wow animate__fadeInLeft">В какой срок осуществляется доставка?</h3>
+        <div class="accordion__text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque debitis deserunt
+            dignissimos dolorem dolorum ea expedita ipsam ipsum laudantium, minima nesciunt nihil non
+            possimus
+            quaerat quisquam rerum, similique tempore!Dolorum harum illo labore minus officia placeat
+            ratione
+            vel velit! Dolorum illo ipsa non quasi qui quod sint tempora, vel. Deserunt et facilis nostrum
+            optio
+            porro repellat unde vitae voluptas.
+          </p>
+          <ul>
+            <li>List item one</li>
+            <li>List item two</li>
+            <li>List item three</li>
+          </ul>
+        </div>
+        <h3 class="accordion__title wow animate__fadeInRight">У вас обновляется ассортимент?</h3>
+        <div class="accordion__text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque debitis deserunt
+            dignissimos dolorem dolorum ea expedita ipsam ipsum laudantium, minima nesciunt nihil non
+            possimus
+            quaerat quisquam rerum, similique tempore!Dolorum harum illo labore minus officia placeat
+            ratione
+            vel velit! Dolorum illo ipsa non quasi qui quod sint tempora, vel. Deserunt et facilis nostrum
+            optio
+            porro repellat unde vitae voluptas.
+          </p>
+        </div>
+        <h3 class="accordion__title wow animate__fadeInLeft">Какого объема у вас пачки чая?</h3>
+        <div class="accordion__text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque debitis deserunt
+            dignissimos dolorem dolorum ea expedita ipsam ipsum laudantium, minima nesciunt nihil non
+            possimus
+            quaerat quisquam rerum, similique tempore!Dolorum harum illo labore minus officia placeat
+            ratione
+            vel velit! Dolorum illo ipsa non quasi qui quod sint tempora, vel. Deserunt et facilis nostrum
+            optio
+            porro repellat unde vitae voluptas.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque debitis deserunt
+            dignissimos dolorem dolorum ea expedita ipsam ipsum laudantium, minima nesciunt nihil non
+            possimus
+            quaerat quisquam rerum, similique tempore!Dolorum harum illo labore minus officia placeat
+            ratione
+            vel velit! Dolorum illo ipsa non quasi qui quod sint tempora, vel. Deserunt et facilis nostrum
+            optio
+            porro repellat unde vitae voluptas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="popup-wrapper w-100 h-100 position-fixed top-0 start-0 overflow-hidden justify-content-center align-items-center" id="popup" [class.open]="modalOpen">
+  <div class="popup-content rounded p-4 border border-primary border-2 d-flex flex-column justify-content-center align-items-center position-relative">
+    <div class="popup-info mb-4 text-center">Посмотрите на наши чайные коллекции</div>
+    <a type="button" class="btn btn-primary" [routerLink]="'/products'">Смотреть</a>
+    <div class="popup-close position-absolute rounded-circle border border-primary border-2">
+      <div class="popup-close-cross position-relative" (click)="closePopUp()">
+        <span class="popup-close-line-first position-absolute"></span>
+        <span class="popup-close-line-second position-absolute"></span>
+      </div>
+    </div>
+  </div>
+</div>

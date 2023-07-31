@@ -1,0 +1,11 @@
+.header {
+  flex: 0 0 auto;
+}
+
+.btn-reset {
+  display: none;
+}
+
+.btn-reset.active {
+  display: block;
+}

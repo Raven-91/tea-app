@@ -30,9 +30,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/jquery-ui/themes/base/accordion.css",
+              "src/styles.scss",
+              "src/app/views/home/main.component.scss",
+              "src/app/shared/components/loader/loader.component.scss",
+              "node_modules/@ngneat/hot-toast/src/styles/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui/dist/jquery-ui.min.js"
+            ]
           },
           "configurations": {
             "production": {
